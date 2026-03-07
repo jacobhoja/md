@@ -1,0 +1,700 @@
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mdadila Investment Company Ltd | Sustainable Resources, Healthy Communities</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:wght@700&display=swap');
+:root{
+  --gold:#C6A15B;
+  --charcoal:#2C2F33;
+  --deep-blue:#1E4E79;
+  --soft-green:#5BBF96;
+  --light-gray:#F5F6FA;
+  --border:#dbe1eb;
+  font-family:'Inter',sans-serif;
+  color:#1e1f25;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:#fff;color:#1e1f25;line-height:1.6;}
+header{position:sticky;top:0;width:100%;background:#fff;z-index:20;box-shadow:0 2px 12px rgba(0,0,0,.08);}
+.navbar{max-width:1200px;margin:0 auto;padding:1rem 1.5rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;}
+.brand{font-family:'Merriweather',serif;font-size:1.4rem;color:var(--charcoal);}
+nav{display:flex;gap:1rem;font-size:.95rem;font-weight:500;}
+nav a{color:var(--charcoal);text-decoration:none;padding:.4rem .6rem;border-radius:4px;transition:.2s;}
+nav a:hover{background:var(--light-gray);}
+.hero{background:linear-gradient(135deg,rgba(30,78,121,.9),rgba(24,39,66,.9)),url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80') center/cover;padding:5rem 1.5rem 4rem;color:#fff;position:relative;overflow:hidden;}
+.hero::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,26,52,.8),rgba(10,26,52,.95));}
+.hero-content{position:relative;max-width:1100px;margin:0 auto;display:grid;gap:1.5rem;}
+.hero h1{font-family:'Merriweather',serif;font-size:2.8rem;line-height:1.2;}
+.hero p{font-size:1.1rem;max-width:40ch;}
+.cta-group{display:flex;flex-wrap:wrap;gap:0.75rem;}
+.cta{padding:.85rem 1.5rem;border:none;border-radius:999px;font-weight:600;background:var(--gold);color:#1e1f25;cursor:pointer;transition:.2s;}
+.cta.secondary{background:#fff;color:var(--deep-blue);border:1px solid rgba(255,255,255,.5);}
+.cta.ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.6);}
+main{max-width:1200px;margin:0 auto;padding:4rem 1.5rem 6rem;display:flex;flex-direction:column;gap:4rem;}
+.section-title{display:flex;justify-content:space-between;align-items:center;gap:1rem;margin-bottom:1rem;}
+.section-title h2{font-family:'Merriweather',serif;font-size:1.8rem;color:var(--charcoal);}
+.section-title p{font-size:.95rem;color:#545b64;}
+.grid{display:grid;gap:1.5rem;}
+.division-cards{grid-template-columns:repeat(auto-fit,minmax(260px,1fr));}
+.card{background:#fff;border:1px solid var(--border);border-radius:12px;padding:1.5rem;box-shadow:0 20px 40px rgba(44,47,51,.08);position:relative;overflow:hidden;transition:transform .3s,box-shadow .3s;}
+.card:hover{transform:translateY(-6px);box-shadow:0 24px 45px rgba(44,47,51,.12);}
+.card h3{font-size:1.3rem;margin-bottom:.6rem;}
+.card p{color:#4a4f56;}
+.card .links{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1rem;font-size:.9rem;}
+.card .links a{color:var(--deep-blue);text-decoration:none;font-weight:600;}
+.badge{position:absolute;top:1rem;right:1rem;background:rgba(198,161,91,.1);color:var(--gold);padding:.3rem .8rem;border-radius:999px;font-size:.8rem;letter-spacing:.04em;}
+.list-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;}
+.list-item{background:var(--light-gray);padding:1rem;border-radius:10px;border:1px solid rgba(0,0,0,.05);}
+.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;}
+.stat{background:#fff;border-radius:14px;padding:1.5rem;border:1px solid var(--border);display:flex;flex-direction:column;gap:.5rem;min-height:140px;}
+.stat h3{font-size:2rem;color:var(--deep-blue);}
+.sustainability-banner{background:linear-gradient(135deg,var(--deep-blue),var(--soft-green));color:#fff;padding:2.5rem;border-radius:20px;display:flex;flex-direction:column;gap:1rem;position:relative;overflow:hidden;}
+.sustainability-banner p{max-width:700px;}
+.news-section .filters{display:flex;flex-wrap:wrap;gap:.75rem;margin-bottom:1rem;}
+.news-section button{padding:.65rem 1.2rem;border-radius:999px;border:1px solid rgba(44,47,51,.2);background:#fff;font-weight:600;cursor:pointer;transition:.2s;}
+.news-section button.active{background:var(--charcoal);color:#fff;border-color:transparent;}
+.news-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1rem;}
+.news-card{background:#fff;border-radius:14px;border:1px solid var(--border);padding:1.25rem;display:flex;flex-direction:column;gap:.75rem;min-height:220px;}
+.news-card h4{font-size:1.1rem;}
+.news-card .category{font-size:.8rem;color:var(--gold);text-transform:uppercase;letter-spacing:.15em;}
+.contact-cta{background:var(--charcoal);color:#fff;padding:2rem;border-radius:20px;display:flex;flex-direction:column;gap:1rem;align-items:flex-start;}
+.contact-cta button{align-self:flex-start;}
+.about-section{display:grid;grid-template-columns:1.2fr .8fr;gap:2rem;}
+.about-section img{width:100%;border-radius:16px;object-fit:cover;max-height:320px;}
+.values-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;}
+.leadership{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;}
+.leader{background:#fff;border:1px solid var(--border);border-radius:14px;padding:1rem;display:flex;flex-direction:column;gap:.5rem;}
+.leader img{width:100%;border-radius:10px;max-height:180px;object-fit:cover;}
+.section-sub{font-weight:600;color:var(--deep-blue);font-size:.95rem;letter-spacing:.1em;}
+.sub-section{background:#fff;border-radius:18px;padding:1.5rem;border:1px solid var(--border);display:grid;gap:1rem;}
+.map-wrapper{display:grid;grid-template-columns:2fr 1fr;gap:1rem;}
+.map{background:#0b233b;color:#fff;border-radius:18px;padding:1rem;position:relative;min-height:280px;display:flex;align-items:center;justify-content:center;}
+.map svg{width:100%;height:auto;}
+.map legend{margin-top:.5rem;}
+.map-info{background:#fff;border-radius:14px;padding:1rem;border:1px solid var(--border);display:flex;flex-direction:column;gap:.5rem;}
+.map-info strong{font-size:1rem;}
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;}
+.gallery-card{background:#fff;border-radius:12px;overflow:hidden;cursor:pointer;position:relative;border:1px solid var(--border);}
+.gallery-card img{width:100%;height:160px;object-fit:cover;display:block;}
+.gallery-card span{position:absolute;bottom:.6rem;left:.6rem;background:rgba(0,0,0,.6);color:#fff;padding:.3rem .7rem;border-radius:999px;font-size:.75rem;}
+.form-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;}
+form{display:flex;flex-direction:column;gap:.8rem;width:100%;}
+input,textarea,select{border-radius:8px;border:1px solid var(--border);padding:.85rem;font-size:.95rem;font-family:'Inter',sans-serif;}
+textarea{resize:vertical;min-height:120px;}
+button[type=submit]{background:var(--deep-blue);color:#fff;border:none;padding:.9rem 1.2rem;border-radius:10px;font-weight:600;cursor:pointer;transition:.2s;}
+button[type=submit]:hover{background:#14365a;}
+.details-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;}
+.details-card{background:#fff;border-radius:14px;padding:1.2rem;border:1px solid var(--border);}
+.news-filter{display:flex;gap:.75rem;flex-wrap:wrap;}
+.contact-details{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;}
+.footer{background:#0f1620;color:#fff;padding:2rem 1.5rem;text-align:center;font-size:.9rem;border-top:1px solid rgba(255,255,255,.1);}
+.chatbot-toggle{position:fixed;bottom:1.5rem;right:1.5rem;background:var(--soft-green);border:none;border-radius:50%;width:60px;height:60px;color:#fff;font-size:1.5rem;cursor:pointer;box-shadow:0 15px 30px rgba(91,191,150,.4);}
+.chatbot-panel{position:fixed;bottom:1.5rem;right:1.5rem;width:320px;background:#fff;border-radius:18px;box-shadow:0 20px 40px rgba(0,0,0,.2);display:none;flex-direction:column;}
+.chatbot-panel.visible{display:flex;}
+.chatbot-header{padding:1rem;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;font-weight:600;}
+.chatbot-body{padding:1rem;flex:1;display:flex;flex-direction:column;gap:.8rem;background:#f9fbff;}
+.chatbot-body div{background:var(--light-gray);padding:.8rem;border-radius:10px;font-size:.9rem;}
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);display:none;align-items:center;justify-content:center;z-index:30;}
+.overlay.visible{display:flex;}
+.overlay img{max-width:90vw;max-height:90vh;border-radius:16px;box-shadow:0 20px 40px rgba(0,0,0,.4);}
+.sticky-logo{display:none;}
+@media (max-width:900px){
+  .about-section{grid-template-columns:1fr;}
+  .map-wrapper{grid-template-columns:1fr;}
+}
+@media (max-width:768px){
+  nav{display:none;}
+  .sticky-logo{display:block;}
+  .navbar{justify-content:space-between;}
+  .hero h1{font-size:2.2rem;}
+  .hero{padding:4rem 1rem 3rem;}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="navbar">
+    <div class="brand">Mdadila Investment Company Ltd</div>
+    <nav>
+      <a href="#divisions">Divisions</a>
+      <a href="#impact">Impact</a>
+      <a href="#news">News</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="sticky-logo">Mdadila</div>
+  </div>
+</header>
+<section class="hero">
+  <div class="hero-content">
+    <p class="section-sub">Mining & Healthcare | Sustainability & Community Impact</p>
+    <h1>Sustainable resources. Healthy communities. Lasting impact.</h1>
+    <p>Leveraging dual expertise in responsible mineral development and compassionate medical delivery to drive measurable impact for stakeholders across Africa and beyond.</p>
+    <div class="cta-group">
+      <button class="cta">Explore Divisions</button>
+      <button class="cta secondary">Contact Us</button>
+      <button class="cta ghost">Investor Relations</button>
+    </div>
+  </div>
+</section>
+<main>
+  <section id="divisions">
+    <div class="section-title">
+      <h2>Division Overview</h2>
+      <p>Integrated services spanning mining and health with unified governance and shared values.</p>
+    </div>
+    <div class="grid division-cards">
+      <article class="card">
+        <span class="badge">Mining</span>
+        <h3>Mining Division</h3>
+        <p>Advanced exploration, extraction, processing, and refining with safety leadership and environmental stewardship.</p>
+        <div class="links">
+          <a href="#mining-projects">Current Projects</a>
+          <a href="#mining-form">Project Inquiry</a>
+          <a href="#investors">Investment Opportunities</a>
+        </div>
+      </article>
+      <article class="card">
+        <span class="badge">Health</span>
+        <h3>Health Services</h3>
+        <p>Community-centered clinical services, specialty departments, and outreach programs delivering trusted care.</p>
+        <div class="links">
+          <a href="#health-services">Medical Programs</a>
+          <a href="#appointments">Book Appointment</a>
+          <a href="#community">Health Outreach</a>
+        </div>
+      </article>
+    </div>
+  </section>
+  <section id="why-choose">
+    <div class="section-title">
+      <h2>Why Choose Mdadila</h2>
+      <p>Expertise, compliance, and community outcomes anchored by long-term partnerships.</p>
+    </div>
+    <div class="list-grid">
+      <div class="list-item">
+        <h4>Expertise in Dual Sectors</h4>
+        <p>Multi-disciplinary teams blending geoscience, engineering, and medical leadership.</p>
+      </div>
+      <div class="list-item">
+        <h4>Compliance & Safety</h4>
+        <p>Global standards, rigorous audits, and safety-first operations in every facility.</p>
+      </div>
+      <div class="list-item">
+        <h4>Community Outcomes</h4>
+        <p>Programs that improve health access while sharing benefits from mineral growth.</p>
+      </div>
+      <div class="list-item">
+        <h4>Long-Term Partnerships</h4>
+        <p>Investors, governments, and NGOs rely on sustained performance.</p>
+      </div>
+    </div>
+  </section>
+  <section id="impact">
+    <div class="section-title">
+      <h2>Key Statistics & Impact Highlights</h2>
+      <p>Measured progress across projects, patients, safety, people, and planet.</p>
+    </div>
+    <div class="stats-grid">
+      <div class="stat">
+        <h3>85+</h3>
+        <p>Active mining & health projects across three continents.</p>
+      </div>
+      <div class="stat">
+        <h3>1.2M</h3>
+        <p>Patients served through networked clinics and outreach programs.</p>
+      </div>
+      <div class="stat">
+        <h3>4.98</h3>
+        <p>Safety score average across operational sites (on a 5-point scale).</p>
+      </div>
+      <div class="stat">
+        <h3>12K+</h3>
+        <p>Local employment sustained through mining and healthcare investments.</p>
+      </div>
+      <div class="stat">
+        <h3>-42%</h3>
+        <p>CO₂ emissions avoided through renewable energy adoption.</p>
+      </div>
+    </div>
+  </section>
+  <section class="sustainability-banner">
+    <div>
+      <p class="section-sub">Sustainability & Community Impact</p>
+      <h2>Environmental care meets community development.</h2>
+      <p>Partnering with local leaders, we deliver responsible mineral development, accessible healthcare, and measurable socio-economic programs.</p>
+    </div>
+    <a href="#sustainability" class="cta">View Sustainability Report</a>
+  </section>
+  <section class="news-section" id="news">
+    <div class="section-title">
+      <h2>Latest News & Updates</h2>
+      <p>Announcements, project milestones, and health initiatives delivered in real time.</p>
+    </div>
+    <div class="filters news-filter">
+      <button class="active" data-filter="all">All</button>
+      <button data-filter="mining">Mining Updates</button>
+      <button data-filter="health">Health Programs</button>
+      <button data-filter="impact">Community Impact</button>
+    </div>
+    <div class="news-grid" id="news-grid">
+      <!-- JS populates -->
+    </div>
+  </section>
+  <section class="contact-cta">
+    <div>
+      <p class="section-sub">Contact & Engagement</p>
+      <h2>Ready to collaborate? Reach out for partnership inquiries, health services, or investment opportunities.</h2>
+      <p>Email teams@mdadila.com or call +123-456-7890 for immediate response.</p>
+    </div>
+    <button class="cta">Submit Inquiry</button>
+  </section>
+  <section class="about-section" id="about">
+    <div class="sub-section">
+      <p class="section-sub">About the Company</p>
+      <h2>Mission, Vision & Core Values</h2>
+      <p>We unite resource development and healthcare delivery to create resilient communities with a clear purpose and ethical governance.</p>
+      <div class="values-grid">
+        <div class="details-card">
+          <h3>Mission</h3>
+          <p>Deliver sustainable resource value while ensuring equitable healthcare impact.</p>
+        </div>
+        <div class="details-card">
+          <h3>Vision</h3>
+          <p>Be Africa’s trusted partner for resilient industries and healthier communities.</p>
+        </div>
+        <div class="details-card">
+          <h3>Core Values</h3>
+          <p>Integrity, innovation, inclusion, and stewardship for people and planet.</p>
+        </div>
+      </div>
+    </div>
+    <div class="sub-section">
+      <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80" alt="Corporate leadership">
+      <div class="leadership">
+        <article class="leader">
+          <img src="https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=400&q=80" alt="Leader">
+          <h4>Dr. Nora Masinga</h4>
+          <p>Group CEO leading strategic partnerships across mining and health.</p>
+          <p>Governance oversight with global certifications.</p>
+        </article>
+        <article class="leader">
+          <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=400&q=80" alt="Leader">
+          <h4>Mr. Isaac Lokale</h4>
+          <p>Chief Operations Officer ensuring safety and community engagement.</p>
+          <p>Former regulatory lead with mining authorities.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+  <section id="governance">
+    <div class="section-title">
+      <h2>Governance, Sustainability & Compliance</h2>
+      <p>Structured oversight with transparent reporting and certifications.</p>
+    </div>
+    <div class="details-grid">
+      <div class="details-card">
+        <h3>Corporate Governance</h3>
+        <p>Independent board committees, ESG oversight, and transparent reporting.</p>
+      </div>
+      <div class="details-card">
+        <h3>Sustainability Commitment</h3>
+        <p>Net-zero targets, renewable energy, and biodiversity restoration programs.</p>
+      </div>
+      <div class="details-card">
+        <h3>Compliance & Certifications</h3>
+        <p>ISO 9001, ISO 45001, ISO 14001, and healthcare accreditations.</p>
+      </div>
+    </div>
+  </section>
+  <section id="mining-division">
+    <div class="section-title">
+      <h2>Mining Division</h2>
+      <p>Full-spectrum mineral services backed by innovation and responsible management.</p>
+    </div>
+    <div class="list-grid">
+      <div class="list-item">
+        <h4>Exploration Services</h4>
+        <p>AI-guided geoscience, geophysical surveys, and data analytics.</p>
+      </div>
+      <div class="list-item">
+        <h4>Extraction & Processing</h4>
+        <p>Efficient operations with lean fuel and water management.</p>
+      </div>
+      <div class="list-item">
+        <h4>Safety Standards</h4>
+        <p>Real-time monitoring, training, and zero-harm culture.</p>
+      </div>
+      <div class="list-item">
+        <h4>Environmental Management</h4>
+        <p>Rehabilitation, biodiversity offsets, and water stewardship.</p>
+      </div>
+    </div>
+    <div class="map-wrapper" id="mining-projects">
+      <div class="map" id="project-map">
+        <svg viewBox="0 0 400 300">
+          <circle cx="90" cy="140" r="35" fill="rgba(198,161,91,0.2)" stroke="#fff" stroke-width="2"></circle>
+          <circle cx="210" cy="100" r="28" fill="rgba(30,78,121,0.3)" stroke="#fff" stroke-width="2"></circle>
+          <circle cx="310" cy="210" r="33" fill="rgba(91,191,150,0.3)" stroke="#fff" stroke-width="2"></circle>
+          <text x="70" y="140" fill="#fff" font-size="12">North Ridge</text>
+          <text x="190" y="100" fill="#fff" font-size="12">Valley</text>
+          <text x="290" y="210" fill="#fff" font-size="12">Coastal Site</text>
+        </svg>
+        <div style="position:absolute;bottom:1rem;left:1rem;">
+          <small>Interactive project map (click region buttons).</small>
+        </div>
+      </div>
+      <div class="map-info" id="map-info">
+        <strong>Project Focus</strong>
+        <p>Click a region to reveal status and contact.</p>
+      </div>
+    </div>
+    <div class="map-info">
+      <h4>Investment Opportunities</h4>
+      <p>Long-term offtake agreements, joint ventures, and royalties.</p>
+      <ul style="list-style:none;padding-left:0;line-height:1.5;">
+        <li>• Lithium & cobalt advanced exploration leads.</li>
+        <li>• Nickel and copper processing expansion.</li>
+        <li>• Strategic equity partnerships across the value chain.</li>
+      </ul>
+    </div>
+    <form id="mining-form">
+      <h3>Project Inquiry</h3>
+      <div class="form-grid">
+        <input type="text" name="name" placeholder="Full Name" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="text" name="company" placeholder="Organization">
+        <select name="region">
+          <option value="">Preferred Region</option>
+          <option value="north">North Ridge</option>
+          <option value="valley">Valley</option>
+          <option value="coastal">Coastal Site</option>
+        </select>
+      </div>
+      <textarea name="message" placeholder="Tell us about your interest" required></textarea>
+      <button type="submit">Submit Inquiry</button>
+    </form>
+  </section>
+  <section id="health-services">
+    <div class="section-title">
+      <h2>Health Services Division</h2>
+      <p>Clinically advanced, community-centered, and connected through digital innovation.</p>
+    </div>
+    <div class="list-grid">
+      <div class="list-item">
+        <h4>Medical Services</h4>
+        <p>Primary care, surgical centers, specialist clinics, and diagnostics.</p>
+      </div>
+      <div class="list-item">
+        <h4>Facilities & Equipment</h4>
+        <p>Smart hospitals with telehealth, diagnostics, and modern patient suites.</p>
+      </div>
+      <div class="list-item">
+        <h4>Community Health Programs</h4>
+        <p>Mobile clinics, maternal health, immunization drives, and training.</p>
+      </div>
+      <div class="list-item">
+        <h4>Patient Care Philosophy</h4>
+        <p>Respect, comfort, and evidence-based medicine for every individual.</p>
+      </div>
+    </div>
+    <div class="gallery">
+      <div class="gallery-card" data-caption="Staff consultation">
+        <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85d?auto=format&fit=crop&w=600&q=80" alt="Healthcare">
+        <span>Consultation</span>
+      </div>
+      <div class="gallery-card" data-caption="Medical equipment">
+        <img src="https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?auto=format&fit=crop&w=600&q=80" alt="Equipment">
+        <span>Technology</span>
+      </div>
+      <div class="gallery-card" data-caption="Community outreach">
+        <img src="https://images.unsplash.com/photo-1584438782298-5667a5e65f75?auto=format&fit=crop&w=600&q=80" alt="Outreach">
+        <span>Outreach</span>
+      </div>
+    </div>
+    <form id="appointments" class="sub-section">
+      <h3>Appointment Booking</h3>
+      <div class="form-grid">
+        <input type="text" name="patient" placeholder="Patient Name" required>
+        <input type="email" name="contact" placeholder="Email" required>
+        <input type="tel" name="phone" placeholder="Phone Number">
+        <select name="dept">
+          <option value="">Select Department</option>
+          <option value="cardio">Cardiology</option>
+          <option value="ortho">Orthopedics</option>
+          <option value="general">General Medicine</option>
+        </select>
+      </div>
+      <textarea name="reason" placeholder="Reason for visit" required></textarea>
+      <button type="submit">Book Appointment</button>
+    </form>
+  </section>
+  <section id="sustainability">
+    <div class="section-title">
+      <h2>Sustainability & Community Impact</h2>
+      <p>Environmental responsibility, community development, and health outreach programs.</p>
+    </div>
+    <div class="details-grid">
+      <div class="details-card">
+        <h3>Environmental Responsibility</h3>
+        <p>Net-zero goals, renewable microgrids, and waste recycling across sites.</p>
+      </div>
+      <div class="details-card">
+        <h3>Community Development</h3>
+        <p>Education funds, local supplier programs, and infrastructure projects.</p>
+      </div>
+      <div class="details-card">
+        <h3>Health Outreach</h3>
+        <p>Mobile clinics, telemedicine, and public health awareness.</p>
+      </div>
+      <div class="details-card">
+        <h3>Local Employment</h3>
+        <p>Training, apprenticeships, and inclusive hiring practices.</p>
+      </div>
+      <div class="details-card">
+        <h3>CSR Reports</h3>
+        <p>Download latest reports below for impact metrics and progress.</p>
+        <div class="links">
+          <a href="#">2023 CSR Report</a>
+          <a href="#">Community Impact Brief</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="investors">
+    <div class="section-title">
+      <h2>Investors & Strategic Partners</h2>
+      <p>Financial highlights, downloads, and partnership forms.</p>
+    </div>
+    <div class="details-grid">
+      <div class="details-card">
+        <h3>Investment Opportunities</h3>
+        <p>Joint ventures in mining, health infrastructure funds, and blended financing options.</p>
+      </div>
+      <div class="details-card">
+        <h3>Financial Highlights</h3>
+        <p>Strong balance sheet, diversified revenue mix, and disciplined capital allocation.</p>
+      </div>
+      <div class="details-card">
+        <h3>Annual Reports & Presentations</h3>
+        <div class="links">
+          <a href="#">2023 Annual Report</a>
+          <a href="#">Investor Presentation</a>
+        </div>
+      </div>
+    </div>
+    <form class="sub-section" id="partner-form">
+      <h3>Business Partnership Inquiry</h3>
+      <div class="form-grid">
+        <input type="text" name="partner" placeholder="Company Name" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="text" name="sector" placeholder="Sector of Interest">
+        <select name="type">
+          <option value="">Type of Partnership</option>
+          <option value="investment">Investment</option>
+          <option value="supply">Supply Chain</option>
+          <option value="community">Community Program</option>
+        </select>
+      </div>
+      <textarea name="objective" placeholder="Describe your objectives" required></textarea>
+      <button type="submit">Submit Partnership Request</button>
+    </form>
+  </section>
+  <section id="news-updates">
+    <div class="section-title">
+      <h2>News & Updates</h2>
+      <p>Insights on mining expansions, health programs, and industry commentary.</p>
+    </div>
+    <div class="news-grid" id="news-cms">
+      <!-- CMS powered cards via JS -->
+    </div>
+  </section>
+  <section id="contact">
+    <div class="section-title">
+      <h2>Contact & Offices</h2>
+      <p>Office locations, departmental contacts, and forms.</p>
+    </div>
+    <div class="contact-details">
+      <div class="details-card">
+        <h3>Head Office - Lusaka</h3>
+        <p>123 Capital Rd, Lusaka, Zambia</p>
+        <p>Phone: +260 210 123 456</p>
+        <p>Email: corporate@mdadila.com</p>
+      </div>
+      <div class="details-card">
+        <h3>Health Services HQ</h3>
+        <p>42 Wellness Ave, Nairobi, Kenya</p>
+        <p>Phone: +254 700 222 333</p>
+        <p>Email: health@mdadila.com</p>
+      </div>
+      <div class="details-card">
+        <h3>Mining Operations Office</h3>
+        <p>08 Industrial Park, Johannesburg, South Africa</p>
+        <p>Phone: +27 11 789 4567</p>
+        <p>Email: mining@mdadila.com</p>
+      </div>
+    </div>
+    <div class="map" style="min-height:220px;margin-top:1rem;">
+      <iframe title="Office map" src="https://maps.google.com/maps?q=lusaka&t=&z=5&ie=UTF8&iwloc=&output=embed" style="width:100%;height:100%;border:0;" loading="lazy"></iframe>
+    </div>
+    <form id="business-form" class="sub-section">
+      <h3>Business Inquiry Form</h3>
+      <div class="form-grid">
+        <input type="text" name="fullname" placeholder="Full Name" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="tel" name="phone" placeholder="Phone Number">
+        <select name="department">
+          <option value="">Department</option>
+          <option value="mining">Mining</option>
+          <option value="health">Health Services</option>
+          <option value="investor">Investor Relations</option>
+        </select>
+      </div>
+      <textarea name="details" placeholder="How can we assist you?" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+  <section id="advanced">
+    <div class="section-title">
+      <h2>Advanced Experience Features</h2>
+      <p>Innovative services, secure portals, careers, and analytics.</p>
+    </div>
+    <div class="details-grid">
+      <div class="details-card">
+        <h3>Investor Document Portal</h3>
+        <p>Secure, role-based access to financials and regulatory filings.</p>
+      </div>
+      <div class="details-card">
+        <h3>Careers & Recruitment</h3>
+        <p>Job listings, application forms, and talent development programs.</p>
+      </div>
+      <div class="details-card">
+        <h3>AI Chatbot & Support</h3>
+        <p>Instant triage for inquiries with multilingual capabilities.</p>
+      </div>
+      <div class="details-card">
+        <h3>Analytics Dashboard</h3>
+        <p>Traffic, engagement, and submission metrics for admins.</p>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="footer">
+  <p>Mdadila Investment Company Ltd © 2024. All rights reserved. Trusted mining & health services with measurable global impact.</p>
+</footer>
+<button class="chatbot-toggle" aria-label="Open chatbot">💬</button>
+<div class="chatbot-panel" id="chatbot-panel">
+  <div class="chatbot-header">
+    AI Concierge
+    <button onclick="toggleChatbot()">✕</button>
+  </div>
+  <div class="chatbot-body">
+    <div>How can we help you today?</div>
+    <div>Need project updates?</div>
+    <div>Looking to book an appointment?</div>
+    <input type="text" placeholder="Type your question..." style="border:1px solid var(--border);border-radius:8px;padding:.6rem;">
+    <button style="background:var(--soft-green);border:none;color:#fff;padding:.7rem;border-radius:8px;">Send</button>
+  </div>
+</div>
+<div class="overlay" id="lightbox-overlay"></div>
+<script>
+const newsData = [
+  {title:'New Copper Extraction Plant Commissioned', summary:'Phase 2 processing capacity doubles throughput with renewable energy integration.', category:'mining', date:'Oct 2024'},
+  {title:'Community Health Week in Coastal County', summary:'Over 8,000 screenings delivered through mobile clinics and partnerships.', category:'health', date:'Sep 2024'},
+  {title:'Carbon Neutral Target Progress', summary:'Emission reductions reach 42% through solar microgrids.', category:'impact', date:'Aug 2024'},
+  {title:'Investor Roundtable Highlights', summary:'Insights on revenue diversification and ESG performance.', category:'investor', date:'Jul 2024'},
+  {title:'New Specialty Cardiology Wing Opens', summary:'State-of-the-art diagnostics and patient-centered suites launch ahead of schedule.', category:'health', date:'Jun 2024'},
+  {title:'Regional Exploration License Awarded', summary:'North Ridge lithium corridor secured with community benefit plan.', category:'mining', date:'May 2024'}
+];
+const newsGrid = document.getElementById('news-grid');
+const cmsGrid = document.getElementById('news-cms');
+const filterBtns = document.querySelectorAll('.news-filter button');
+const createNewsCards = (data, container) => {
+  container.innerHTML = '';
+  data.forEach(item=>{
+    const card = document.createElement('article');
+    card.className='news-card';
+    card.innerHTML=<span class="category">${item.category.toUpperCase()}</span><h4>${item.title}</h4><p>${item.summary}</p><p style="margin-top:auto;font-size:.8rem;color:#6d7480;">${item.date}</p>;
+    container.appendChild(card);
+  });
+};
+createNewsCards(newsData, newsGrid);
+createNewsCards(newsData.slice(0,3), cmsGrid);
+filterBtns.forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    filterBtns.forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    const filter = btn.getAttribute('data-filter');
+    const filtered = filter==='all'? newsData : newsData.filter(item=>item.category===filter);
+    createNewsCards(filtered, newsGrid);
+  });
+});
+const regions = {
+  north:{title:'North Ridge', details:'Lithium-Cobalt corridor, nearing feasibility, community skill training onsite.', contact:'+260 210 111 000'},
+  valley:{title:'Valley', details:'High-grade copper deposit with pilot processing and renewable integration.', contact:'+254 700 111 222'},
+  coastal:{title:'Coastal Site', details:'Copper-nickel operations with marine biodiversity monitoring.', contact:'+27 11 123 789'}
+};
+const mapInfo = document.getElementById('map-info');
+Object.keys(regions).forEach(region=>{
+  const btn = document.createElement('button');
+  btn.textContent=regions[region].title;
+  btn.style.padding='.4rem .8rem';
+  btn.style.borderRadius='8px';
+  btn.style.border='1px solid var(--border)';
+  btn.style.background='#fff';
+  btn.style.cursor='pointer';
+  btn.addEventListener('click',()=>{updateMapInfo(region);});
+  mapInfo.appendChild(btn);
+});
+function updateMapInfo(region){
+  const data=regions[region];
+  mapInfo.innerHTML=<strong>${data.title}</strong><p>${data.details}</p><p><strong>Contact:</strong> ${data.contact}</p>;
+  const regionBtn = document.createElement('button');
+  regionBtn.textContent='Back to overview';
+  regionBtn.style.marginTop='1rem';
+  regionBtn.style.padding='.4rem .8rem';
+  regionBtn.style.borderRadius='8px';
+  regionBtn.style.border='1px solid var(--border)';
+  regionBtn.style.background='#fff';
+  regionBtn.style.cursor='pointer';
+  regionBtn.addEventListener('click',()=>{mapInfo.innerHTML='<strong>Project Focus</strong><p>Click a region to reveal status and contact.</p>';});
+  mapInfo.appendChild(regionBtn);
+}
+const forms = document.querySelectorAll('form');
+forms.forEach(form=>{
+  form.addEventListener('submit',e=>{
+    e.preventDefault();
+    form.querySelector('button[type=submit]').textContent='Submitted';
+    setTimeout(()=>{form.querySelector('button[type=submit]').textContent='Submit Inquiry';},1400);
+  });
+});
+const gallery = document.querySelectorAll('.gallery-card');
+const overlay = document.getElementById('lightbox-overlay');
+gallery.forEach(card=>{
+  card.addEventListener('click',()=>{
+    const img = card.querySelector('img').cloneNode();
+    overlay.innerHTML='';
+    overlay.appendChild(img);
+    overlay.classList.add('visible');
+  });
+});
+overlay.addEventListener('click',()=>overlay.classList.remove('visible'));
+const chatbotPanel = document.getElementById('chatbot-panel');
+const chatbotToggle = document.querySelector('.chatbot-toggle');
+chatbotToggle.addEventListener('click',toggleChatbot);
+function toggleChatbot(){
+  chatbotPanel.classList.toggle('visible');
+}
+window.addEventListener('scroll',()=>{
+  const header = document.querySelector('header');
+  if(window.scrollY>20){
+    header.style.boxShadow='0 4px 20px rgba(0,0,0,.12)';
+  } else {
+    header.style.boxShadow='0 2px 12px rgba(0,0,0,.08)';
+  }
+});
+</script>
+</body>
+</html>
